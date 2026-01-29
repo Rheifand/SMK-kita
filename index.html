@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMKN 1 Cikarang Selatan</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* ===== HOME WELCOME ===== */
+#welcome {
+  height: 100vh;
+  background: linear-gradient(135deg, #004aad, #007bff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+#welcome h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+#welcome button {
+  margin-top: 30px;
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: white;
+  color: #004aad;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#welcome button:hover {
+  background: #e2e2e2;
+}
+
+/* ===== MAIN CONTENT ===== */
+#content {
+  display: none;
+  padding-bottom: 40px;
+}
+
+header {
+  background: #004aad;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===== ICON MENU ===== */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.menu div {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.menu div:hover {
+  transform: translateY(-5px);
+}
+
+.menu img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  display: none;
+  padding: 30px;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #004aad;
+}
+
+.back {
+  margin-top: 20px;
+  display: inline-block;
+  color: #004aad;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #004aad;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== WELCOME PAGE ===== -->
+<section id="welcome">
+  <h1>SMKN 1 Cikarang Selatan</h1>
+  <p>Sekolah Menengah Kejuruan Negeri</p>
+  <button onclick="enterSite()">Selamat Datang</button>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div id="content">
+
+<header>
+  <h1>Informasi SMKN 1 Cikarang Selatan</h1>
+  <p>Klik icon untuk melihat detail</p>
+</header>
+
+<!-- ===== ICON MENU ===== -->
+<section class="menu">
+  <div onclick="openSection('profil')">
+    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png">
+    <p>Profil</p>
+  </div>
+
+  <div onclick="openSection('jurusan')">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+    <p>Jurusan</p>
+  </div>
+
+  <div onclick="openSection('fasilitas')">
+    <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png">
+    <p>Fasilitas</p>
+  </div>
+
+  <div onclick="openSection('ekskul')">
+    <img src="https://cdn-icons-png.flaticon.com/512/3048/3048395.png">
+    <p>Ekstrakurikuler</p>
+  </div>
+
+  <div onclick="openSection('kontak')">
+    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+    <p>Kontak</p>
+  </div>
+
+  <div onclick="openSection('sertifikasi')">
+    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+    <p>Sertifikasi</p>
+  </div>
+</section>
+
+<!-- ===== SECTIONS DETAIL ===== -->
+<section id="profil" class="section">
+  <h2>Profil Sekolah</h2>
+  <p><b>Nama:</b> SMKN 1 Cikarang Selatan</p>
+  <p><b>NPSN:</b> 20238032</p>
+  <p><b>Status:</b> Negeri</p>
+  <p><b>Alamat:</b> Jl. Ciantra RT 009/005, Sukadami, Cikarang Selatan, Bekasi</p>
+  <p><b>Berdiri:</b> 24 Februari 2004</p>
+  <p><b>Akreditasi:</b> A</p>
+  <span class="back" onclick="backMenu()">← Kembali</span>
+</section>
+
+<section id="jurusan" class="section">
+  <h2>Jurusan</h2>
+  <ul>
+    <li>Teknik Mesin</li>
+    <li>Teknik Ketenagalistrikan</li>
+    <li>Teknik Jaringan Komputer & Telekomunikasi</li>
+    <li>Akuntansi & Keuangan Lembaga</li>
+  </ul>
+  <span class="back" onclick="backMenu()">← Kembali</span>
+</section>
+
+<section id="fasilitas" class="section">
+  <h2>Fasilitas</h2>
+  <ul>
+    <li>Ruang kelas representatif</li>
+    <li>Laboratorium komputer</li>
+    <li>Bengkel praktik kejuruan</li>
+    <li>Perpustakaan</li>
+    <li>Lapangan olahraga</li>
+    <li>Area sekolah ±15.155 m²</li>
+  </ul>
+  <span class="back" onclick="backMenu()">← Kembali</span>
+</section>
+
+<section id="ekskul" class="section">
+  <h2>Ekstrakurikuler</h2>
+  <ul>
+    <li>OSIS</li>
+    <li>Pramuka</li>
+    <li>Futsal, Basket, Voli</li>
+    <li>Club IT</li>
+  </ul>
+  <span class="back" onclick="backMenu()">← Kembali</span>
+</section>
+
+<section id="kontak" class="section">
+  <h2>Kontak</h2>
+  <p>Email: smkn_01ciksel@yahoo.com</p>
+  <p>Telepon: 021-29092004</p>
+  <p>Website: smkn1cikarangselatan.sch.id</p>
+  <span class="back" onclick="backMenu()">← Kembali</span>
+</section>
+
+<section id="sertifikasi" class="section">
+  <h2>Sertifikasi</h2>
+  <p>Memiliki LSP-P1 untuk sertifikasi kompetensi siswa sesuai standar industri.</p>
+  <span class="back" onclick="backMenu()">← Kembali</span>
+</section>
+
+<footer>
+  © 2026 SMKN 1 Cikarang Selatan
+</footer>
+
+</div>
+
+<script>
+function enterSite() {
+  document.getElementById("welcome").style.display = "none";
+  document.getElementById("content").style.display = "block";
+}
+
+function openSection(id) {
+  document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
+  document.querySelector(".menu").style.display = "none";
+  document.getElementById(id).style.display = "block";
+}
+
+function backMenu() {
+  document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
+  document.querySelector(".menu").style.display = "grid";
+}
+</script>
+
+</body>
+</html>
